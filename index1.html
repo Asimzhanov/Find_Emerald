@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Game</title>
+	<style type="text/css">
+		.box {
+			background: cyan;
+			height: 150px;
+			width: 150px;
+			margin-top: 2px;
+			margin-left: 2px;
+			text-align: center;
+		}
+
+		.boxm {
+			background: cyan;
+			height: 150px;
+			width: 150px;
+			margin-top: 2px;
+			margin-left: 400px;
+			text-align: center;
+		}
+
+		.scb {
+			background: red;
+			height: 600px;
+			width: 250px;
+			margin-top: -1000px;
+		}
+	</style>
+</head>
+<body>
+<div style="display: flex;">
+	
+	<div class="boxm">
+	</div>
+
+	<div class="box">
+		<h1>1</h1>
+	</div>
+
+	<div class="box">
+		<h1>2</h1>
+	</div>
+
+	<div class="box">
+		<h1>3</h1>
+	</div>
+
+	<div class="box">
+		<h1>4</h1>
+	</div>
+
+	<div class="box">
+		<h1>5</h1>
+	</div>
+
+	<div class="box">
+		<h1>6</h1>
+	</div>
+
+</div>
+
+
+<div style="display: flex;">
+	
+	<div class="boxm">
+		<h1>A</h1>
+	</div>
+
+	<div class="box bomb">
+	</div>
+
+	<div class="box popal">
+	</div>
+
+	<div class="box mimo">
+	</div>
+
+	<div class="box mimo">
+	</div>
+
+	<div class="box mimo">
+	</div>
+
+	<div class="box popal">
+	</div>
+
+</div>
+
+<div style="display: flex;">
+	
+	<div class="boxm">
+		<h1>B</h1>
+	</div>
+
+	<div class="box popal">
+	</div>
+
+	<div class="box bomb">
+	</div>
+
+	<div class="box bomb">
+	</div>
+
+	<div class="box mimo">
+	</div>
+
+	<div class="box bomb">
+	</div>
+
+	<div class="box mimo">
+	</div>
+
+</div>
+
+<div style="display: flex;">
+	
+	<div class="boxm">
+		<h1>C</h1>
+	</div>
+
+	<div class="box mimo">
+	</div>
+
+	<div class="box bomb">
+	</div>
+
+	<div class="box bomb">
+	</div>
+
+	<div class="box bomb">
+	</div>
+
+	<div class="box mimo">
+	</div>
+
+	<div class="box bomb">
+	</div>
+
+</div>
+
+<div style="display: flex;">
+	
+	<div class="boxm">
+		<h1>D</h1>
+	</div>
+
+	<div class="box mimo">
+	</div>
+
+	<div class="box bomb">
+	</div>
+
+	<div class="box bomb">
+	</div>
+
+	<div class="box popal">
+	</div>
+
+	<div class="box bomb">
+	</div>
+
+	<div class="box mimo">
+	</div>
+
+</div>
+
+<div style="display: flex;">
+	
+	<div class="boxm">
+		<h1>E</h1>
+	</div>
+
+	<div class="box mimo">
+	</div>
+
+	<div class="box popal">
+	</div>
+
+	<div class="box mimo">
+	</div>
+
+	<div class="box popal">
+	</div>
+
+	<div class="box mimo">
+	</div>
+
+	<div class="box mimo">
+	</div>
+
+</div>
+
+<div style="display: flex;">
+	
+	<div class="boxm">
+		<h1>F</h1>
+	</div>
+
+	<div class="box mimo">
+	</div>
+
+	<div class="box mimo">
+	</div>
+
+	<div class="box bomb">
+	</div>
+
+	<div class="box mimo">
+	</div>
+
+	<div class="box mimo">
+	</div>
+
+	<div class="box popal">
+	</div>
+
+</div>
+
+<div class="scb">
+	<h1 style="margin-top: 0px; margin-bottom: 0px;">Objection:</h1>
+	<h2 style="margin-top: 0px; margin-bottom: 0px;">Find 7 Emeralds</h2>
+	<h1>Score: <span class="pointer">0</span></h1>
+</div>
+<script type="text/javascript">
+	let bomb = document.querySelectorAll(".bomb")
+	let popal = document.querySelectorAll(".popal")
+	let mimo = document.querySelectorAll(".mimo")
+	let score = 0;
+
+	for(let x=0; x<12; x=x+1) {
+		bomb[x].onclick = function() {
+			score = score - 1;
+		document.querySelector(".pointer").innerHTML = score;
+			bomb[x].style.backgroundImage = "url(exp.png)"
+			bomb[x].style.backgroundSize = "100% 100%"
+		}
+	}
+
+	for(let x=0; x<7; x=x+1) {
+		popal[x].onclick = function() {
+			score = score + 1;
+		document.querySelector(".pointer").innerHTML = score;
+			popal[x].style.backgroundImage = "url(em.png)"
+			popal[x].style.backgroundSize = "100% 100%"
+		
+			
+		}
+	}
+
+	for(let x=0; x<17; x=x+1) {
+		mimo[x].onclick = function() {
+		mimo[x].style.backgroundImage = "url(miss.png)"
+		mimo[x].style.backgroundSize = "100% 100%"
+		}
+	}
+</script>
+
+</body>
+</html>
